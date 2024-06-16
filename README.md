@@ -9,3 +9,12 @@ Bonus:
 Creare un componente loader da visualizzare fintantoché i risultati non sono pronti.
 Documentazione:
 https://ygoprodeck.com/api-guide/
+
+Iniziamo col decidere i componenti da creare, sicuramente voglio un AppMain.vue , e un AppHeader.vue,
+ all'interno di header metterò l'h1 con il titolo
+ mentre nel main, creerò due section, una search e l'altra body, dividerò poi i componenti, 
+ ma inizierò col creare il componente ListCards che avrà il compito di fare una chiamata get all'indirizzo
+ proseguirò analizzando il dato, e inserendo all'interno del foglio i dati previsti,
+
+
+ ho deciso che per velocizzare il processo importerò anche bootstrap.
