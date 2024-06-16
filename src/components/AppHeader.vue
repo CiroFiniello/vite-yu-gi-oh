@@ -11,7 +11,7 @@ export default {
 <template>
 <header>
     <h1>
-        You-gi-OH!
+        You-gi-OH! Api
     </h1>
 </header>
 </template>
