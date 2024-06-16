@@ -15,7 +15,7 @@ export default {
     },
         methods:{
             getListCards(){
-                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=39&offset=0')
                 .then( (response) => {
                     // handle success
                     console.log(response.data.data);
@@ -39,8 +39,7 @@ export default {
 
 <template>
 <main>
-
-        <div class="container-cards">
+    <div class="container-cards">
             <MainListCards :cards="ListCards" />
         </div>
     </main>
@@ -49,6 +48,7 @@ export default {
 <style scoped>
 main{
     background-color: orange;
+    padding: 3rem;
     .container-cards{
         background-color: white;
         width: 85%;
