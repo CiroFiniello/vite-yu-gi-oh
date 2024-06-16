@@ -18,3 +18,15 @@ Iniziamo col decidere i componenti da creare, sicuramente voglio un AppMain.vue 
 
 
  ho deciso che per velocizzare il processo importerò anche bootstrap.
+
+ 
+ <!-- <APP>
+        <AppHeader>
+        </AppHeader>
+        <AppMain>
+                <MainSearch></MainSearch>
+                <MainListCards>
+                            <MainCard></MainCard>
+                </MainListCards>
+        </AppMain>
+ </APP> -->
