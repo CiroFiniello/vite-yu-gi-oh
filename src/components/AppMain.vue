@@ -13,38 +13,47 @@ export default {
             ListCards: [],
         };
     },
-        methods:{
-            getListCards(characterName){
-                // axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php?num=39&offset=0' +
-                // characterName
-                // )    
-
-                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=39&offset=0' +
-                characterName
-                )
-                .then( (response) => {
-                    // handle success
-                    console.log(response.data.data);
-                    this.ListCards = response.data.data
-                })
-                .catch(function (error) {
-                    // handle error
-                    console.log(error);
-                })
-                .finally(function () {
-                    // always executed
-                });
-            },
-            sarchCharacter(searchedString){
-                console.log(searchedString);
-                this.getListCards(searchedString);
+    methods: {
+        getListCards(characterName) {
+            if (characterName != null) {
+                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=39&offset=0&archetype=' + characterName)
+                    .then((response) => {
+                        // handle success
+                        console.log(response.data.data);
+                        this.ListCards = response.data.data;
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log(error);
+                    })
+                    .finally(function () {
+                        // always executed
+                    });
+            } else {    
+                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=39&offset=0')
+                    .then((response) => {
+                        // handle success
+                        console.log(response.data.data);
+                        this.ListCards = response.data.data;
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log(error);
+                    })
+                    .finally(function () {
+                        // always executed
+                    });
             }
         },
-        created(){
-            this.getListCards();
+        searchCharacter(searchedString) {
+            console.log(searchedString);
+            this.getListCards(searchedString);
         }
+    },
+    created() {
+        this.getListCards()
     }
-
+}
 </script>
 
 <template>
