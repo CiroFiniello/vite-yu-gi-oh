@@ -28,6 +28,9 @@ export default {
                 .finally(function () {
                     // always executed
                 });
+            },
+            info(){
+                console.log('clicked');
             }
         },
         created(){
@@ -39,6 +42,7 @@ export default {
 
 <template>
 <main>
+    <MainSearch @searched="info"/>
     <div class="container-cards">
             <MainListCards :cards="ListCards" />
         </div>
