@@ -14,8 +14,14 @@ export default {
         };
     },
         methods:{
-            getListCards(){
-                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=39&offset=0')
+            getListCards(characterName){
+                // axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php?num=39&offset=0' +
+                // characterName
+                // )    
+
+                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=39&offset=0' +
+                characterName
+                )
                 .then( (response) => {
                     // handle success
                     console.log(response.data.data);
@@ -29,8 +35,9 @@ export default {
                     // always executed
                 });
             },
-            info(){
-                console.log('clicked');
+            sarchCharacter(searchedString){
+                console.log(searchedString);
+                this.getListCards(searchedString);
             }
         },
         created(){
@@ -42,7 +49,7 @@ export default {
 
 <template>
 <main>
-    <MainSearch @searched="info"/>
+    <MainSearch @searched="sarchCharacter"/>
     <div class="container-cards">
             <MainListCards :cards="ListCards" />
         </div>
